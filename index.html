@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: antiquewhite; /* Light gray background */
+            font-family: Arial, sans-serif; /* Default font */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px; /* Limit the maximum width of the form container */
+            margin: 0 auto;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            border-radius: 8px; /* Rounded corners for the card */
+            overflow: hidden; /* Ensure content stays within rounded corners */
+            margin-bottom: 20px; /* Space between the forms */
+        }
+
+        .card-header {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white; /* White text */
+            font-size: 1.5rem; /* Larger header text */
+            text-align: center; /* Center the text */
+            padding: 15px 0; /* Padding around the text */
+            border-bottom: 1px solid #ddd; /* Light border at the bottom */
+        }
+
+        .card-body {
+            padding: 20px; /* Padding inside the card */
+            background-color: white; /* White background for the card body */
+        }
+
+        .form-label {
+            font-weight: bold; /* Bold labels */
+            margin-bottom: 10px; /* Add space between label and input */
+            display: block; /* Ensure label takes full width */
+        }
+
+        .form-control {
+            border-radius: 5px; /* Rounded corners for inputs */
+            margin-bottom: 20px; /* Add space between inputs */
+            height: 45px; /* Increase input height for better touch experience */
+            font-size: 1rem; /* Increase font size for readability */
+        }
+
+        .btn-primary, .btn-warning {
+            border: none; /* Remove default borders */
+            width: 100%; /* Full width button */
+            padding: 12px 0; /* Padding for a larger clickable area */
+            font-size: 1rem; /* Increase font size for readability */
+            border-radius: 5px; /* Rounded corners for buttons */
+            transition: background-color 0.3s ease; /* Smooth background color change on hover */
+            margin-bottom: 10px; /* Space between buttons */
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .nav-tabs {
+            justify-content: center; /* Center the navigation tabs */
+            margin-bottom: 20px; /* Space below the tabs */
+        }
+
+        .nav-link {
+            color: #007bff; /* Bootstrap primary color */
+            font-weight: bold; /* Bold text */
+        }
+
+        .nav-link.active {
+            color: white; /* White text when active */
+            background-color: #007bff; /* Bootstrap primary color when active */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs" id="authTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Register</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="authTabContent">
+            <!-- Login Form -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                <div class="card">
+                    <div class="card-header">
+                        LOGIN
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordInput" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                        </div>
+                        
+                        <a href="./loginresult.html" class="btn btn-primary">Login</a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <div class="card">
+                    <div class="card-header">
+                        REGISTRATION
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="registerEmail" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerMobile" class="form-label">Mobile</label>
+                            <input type="text" class="form-control" id="registerMobile" placeholder="Mobile">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="registerPassword" placeholder="Password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-warning">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
